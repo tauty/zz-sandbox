@@ -1,0 +1,23 @@
+UnmodifiableRandomAccessList[
+	Config{
+		exceptionType = "java.lang.RuntimeException"
+		matchCauseRecursively = true
+		matchParentRecursively = true
+		prefixOfStackTraces = ArrayList[
+			"com.github.tauty.sandbox"
+			"java.lang"
+		]
+	}
+	Config{
+		exceptionType = "java.lang.NullPointerException"
+		matchCauseRecursively = false
+		matchParentRecursively = false
+		prefixOfStackTraces = ArrayList[ ]
+	}
+	Config{
+		exceptionType = "java.sql.SQLException"
+		matchCauseRecursively = false
+		matchParentRecursively = false
+		prefixOfStackTraces = ArrayList[ ]
+	}
+]

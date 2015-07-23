@@ -1,0 +1,235 @@
+<<initial>>
+"loadConfigPeriod": 60000,
+"configList": [
+    {
+        "exceptionType": "java.lang.RuntimeException",
+        "prefixOfStackTraces": [
+            "com.github.tauty.sandbox",
+            "java.lang"
+        ],
+        "matchCauseRecursively": true,
+        "matchParentRecursively": true
+    },
+    {
+        "exceptionType": "java.lang.NullPointerException",
+        "prefixOfStackTraces": [],
+        "matchCauseRecursively": false,
+        "matchParentRecursively": false
+    },
+    {
+        "exceptionType": "java.sql.SQLException",
+        "matchCauseRecursively": false,
+        "matchParentRecursively": false
+    }
+]
+<</initial>>
+
+<<short_load_config_period>>
+"loadConfigPeriod": 1100,
+"configList": [
+    {
+        "exceptionType": "java.lang.RuntimeException",
+        "prefixOfStackTraces": [
+            "com.github.tauty.sandbox",
+            "java.lang"
+        ],
+        "matchCauseRecursively": true,
+        "matchParentRecursively": true
+    },
+    {
+        "exceptionType": "java.lang.NullPointerException",
+        "prefixOfStackTraces": [],
+        "matchCauseRecursively": false,
+        "matchParentRecursively": false
+    },
+    {
+        "exceptionType": "java.sql.SQLException",
+        "matchCauseRecursively": false,
+        "matchParentRecursively": false
+    }
+]
+<</short_load_config_period>>
+
+<<loadConfig_test>>
+[
+    {
+        "exceptionType": "java.lang.RuntimeException",
+        "prefixOfStackTraces": [
+            "com.github.tauty.sandbox",
+            "java.lang"
+        ]
+    }
+]
+<</loadConfig_test>>
+
+<<matchParentRecursively_is_true>>
+[
+    {
+        "exceptionType": "java.lang.RuntimeException",
+        "prefixOfStackTraces": [
+            "com.github.tauty.sandbox",
+            "java.lang"
+        ],
+        "matchParentRecursively": true
+    }
+]
+<</matchParentRecursively_is_true>>
+
+<<matchParentRecursively_is_false>>
+[
+    {
+        "exceptionType": "java.lang.RuntimeException",
+        "prefixOfStackTraces": [
+            "com.github.tauty.sandbox",
+            "java.lang"
+        ],
+        "matchParentRecursively": false
+    }
+]
+<</matchParentRecursively_is_false>>
+
+<<matchCauseRecursively_is_true>>
+[
+    {
+        "exceptionType": "java.lang.NullPointerException",
+        "prefixOfStackTraces": [
+            "java.lang",
+            "com.github.tauty.sandbox"
+        ],
+        "matchParentRecursively": false,
+        "matchCauseRecursively": true
+    }
+]
+<</matchCauseRecursively_is_true>>
+
+<<matchCauseRecursively_is_false>>
+[
+    {
+        "exceptionType": "java.lang.NullPointerException",
+        "prefixOfStackTraces": [
+            "java.lang",
+            "com.github.tauty.sandbox"
+        ],
+        "matchParentRecursively": false,
+        "matchCauseRecursively": false
+    }
+]
+<</matchCauseRecursively_is_false>>
+
+<<empty_prefixOfStackTraces>>
+[
+    {
+        "exceptionType": "java.lang.NullPointerException"
+    }
+]
+<</empty_prefixOfStackTraces>>
+
+<<all_of_elements_of_prefixOfStackTraces_matched>>
+[
+    {
+        "exceptionType": "java.lang.NullPointerException",
+        "prefixOfStackTraces": [
+            "java.lang",
+            "com.github.tauty.sandbox",
+            "org.junit.runners"
+        ]
+    }
+]
+<</all_of_elements_of_prefixOfStackTraces_matched>>
+
+<<all_of_prefixOfStackTraces_not_matched>>
+[
+    {
+        "exceptionType": "java.lang.NullPointerException",
+        "prefixOfStackTraces": [
+            "java.lang.regex",
+            "com.github.tauty.sandbox",
+            "org.junit.runners"
+        ]
+    }
+]
+<</all_of_prefixOfStackTraces_not_matched>>
+
+<<both_of_exceptionType_and_prefixOfStackTraces_matched>>
+[
+    {
+        "exceptionType": "java.lang.NullPointerException",
+        "prefixOfStackTraces": [
+            "java.lang",
+            "com.github.tauty.sandbox",
+            "org.junit.runners"
+        ]
+    }
+]
+<</both_of_exceptionType_and_prefixOfStackTraces_matched>>
+
+<<only_exceptionType_matched>>
+[
+    {
+        "exceptionType": "java.lang.NullPointerException",
+        "prefixOfStackTraces": [
+            "java.lang",
+            "com.github.tauty.sandbox.foo.bar",
+            "org.junit.runners"
+        ]
+    }
+]
+<</only_exceptionType_matched>>
+
+<<one_of_configList_matched>>
+[
+    {
+        "exceptionType": "java.sql.SQLException",
+        "prefixOfStackTraces": [
+            "java.lang",
+            "com.github.tauty.sandbox",
+            "org.junit.runners"
+        ]
+    },
+    {
+        "exceptionType": "java.lang.NullPointerException",
+        "prefixOfStackTraces": [
+            "java.lang",
+            "com.github.tauty.sandbox.foo.bar",
+            "org.junit.runners"
+        ]
+    },
+    {
+        "exceptionType": "java.lang.NullPointerException",
+        "prefixOfStackTraces": [
+            "java.lang",
+            "com.github.tauty.sandbox",
+            "org.junit.runners"
+        ]
+    }
+]
+<</one_of_configList_matched>>
+
+<<none_of_configList_matched>>
+[
+    {
+        "exceptionType": "java.sql.SQLException",
+        "prefixOfStackTraces": [
+            "java.lang",
+            "com.github.tauty.sandbox",
+            "org.junit.runners"
+        ]
+    },
+    {
+        "exceptionType": "java.lang.NullPointerException",
+        "prefixOfStackTraces": [
+            "java.lang",
+            "com.github.tauty.sandbox.foo.bar",
+            "org.junit.runners"
+        ]
+    },
+    {
+        "exceptionType": "java.lang.NullPointerException",
+        "prefixOfStackTraces": [
+            "java.lang.regex",
+            "com.github.tauty.sandbox",
+            "org.junit.runners"
+        ]
+    }
+]
+<</none_of_configList_matched>>

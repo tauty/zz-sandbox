@@ -1,0 +1,23 @@
+"loadConfigPeriod": 60000,
+"configList": [
+    {
+        "exceptionType": "java.lang.RuntimeException",
+        "prefixOfStackTraces": [
+            "com.github.tauty.sandbox",
+            "java.lang"
+        ],
+        "matchCauseRecursively": true,
+        "matchParentRecursively": true
+    },
+    {
+        "exceptionType": "java.lang.NullPointerException",
+        "prefixOfStackTraces": [],
+        "matchCauseRecursively": false,
+        "matchParentRecursively": false
+    },
+    {
+        "exceptionType": "java.sql.SQLException",
+        "matchCauseRecursively": false,
+        "matchParentRecursively": false
+    }
+]

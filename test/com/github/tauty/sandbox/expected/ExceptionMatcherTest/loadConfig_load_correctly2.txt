@@ -1,0 +1,11 @@
+UnmodifiableRandomAccessList[
+	Config{
+		exceptionType = "java.lang.RuntimeException"
+		matchCauseRecursively = true
+		matchParentRecursively = true
+		prefixOfStackTraces = ArrayList[
+			"com.github.tauty.sandbox"
+			"java.lang"
+		]
+	}
+]
